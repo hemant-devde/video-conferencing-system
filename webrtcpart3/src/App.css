@@ -1,0 +1,34 @@
+body{
+    background-color: darkgrey;
+}
+
+
+.homepage-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  .homepage-container .input-container input{
+
+    font-size:  24px;
+    display: block;
+    padding:  10px 20px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 12px;
+  }
+
+  .homepage-container .input-container button{
+
+    display: block;
+    font-size: 24px;
+    width: 100%;
+    padding: 10px 24px;
+    cursor: pointer;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 12px;
+  }

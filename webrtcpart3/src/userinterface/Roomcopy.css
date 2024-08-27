@@ -1,0 +1,95 @@
+.room-page-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .videos-container {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    z-index: 1;
+  }
+  
+  .chat-container {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: white;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .chat-container.visible {
+    right: 0;
+  }
+  
+  .chat-toggle-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1001;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .local-video-container {
+    position: absolute;
+    z-index: 1000;
+    width: 30vw;
+    max-width: 250px;
+    min-width: 150px;
+  }
+  
+  @media (min-width: 769px) {
+    .chat-container {
+      right: 0;
+      width: 300px;
+    }
+  
+    .videos-container {
+      right: 300px;
+    }
+  
+    .local-video-container {
+      width: 20vw;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .room-page-container.chat-visible .videos-container {
+      right: 300px;
+    }
+  
+    .local-video-container {
+      width: 40vw;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .chat-container {
+      width: 100%;
+      right: -100%;
+    }
+  
+    .chat-container.visible {
+      right: 0;
+    }
+  
+    .room-page-container.chat-visible .videos-container {
+      display: none;
+    }
+  
+    .local-video-container {
+      width: 50vw;
+    }
+  }

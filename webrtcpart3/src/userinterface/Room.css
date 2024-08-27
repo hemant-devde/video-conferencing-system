@@ -1,0 +1,67 @@
+.room-page-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .videos-container {
+    position: absolute;
+    top: 60px; /* Adjust based on the height of your top bar */
+    left: 0;
+    right: 0;
+    bottom: 60px; /* Adjust based on the height of your chat component */
+    z-index: 1;
+  }
+
+  .chat-container {
+    position: fixed;
+    right: -300px; /* Hide chat off-screen by default */
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: white;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .chat-container.visible {
+    right: 0;
+  }
+  
+  .chat-toggle-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1001;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Hide the button on larger screens */
+  @media (min-width: 769px) {
+    .chat-toggle-btn {
+      display: none;
+    }
+  
+    .chat-container {
+      right: 0;
+      width: 300px;
+    }
+  }
+  
+  /* Adjust main content area when chat is visible on small screens */
+  @media (max-width: 768px) {
+    .room-page-container {
+      padding-right: 0;
+      transition: padding-right 0.3s ease-in-out;
+    }
+  
+    .room-page-container.chat-visible {
+      padding-right: 300px;
+    }
+  } 
